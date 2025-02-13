@@ -15,7 +15,7 @@ export default {
         darkestMain: '#0B0D28',
         customBlue: {
           light: '#F7F7F8',
-          DEFAULT: '#CBCBFF',
+          DEFAULT: '#00a6e6',
           dark: '#0B0D28',
         },
         customGreen: {

@@ -1,22 +1,20 @@
-import { Github, Linkedin, Mail} from 'lucide-react';
-import HeroSection from './components/HeroSection';
 import About from './components/About';
-import Interests from './components/Interests';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Example from './components/Carousel';
+import HeroSection from './components/HeroSection';
+import Projects from './components/Projects';
 
 function App() {
   return (
-    <div className="min-h-screen bg-emerald-50">
+    <div className="min-h-screen bg-emerald-50 text-customGreen-dark">
       {/* Hero Section */}
       <HeroSection/>
 
       {/* About Section */}
       <About/>
 
-      {/* Interests Section */}
-      <Interests/>
+      {/* Projects Section */}
+      <Projects/>
 
       {/* Projects Section */}
       {/* <section className="py-20 bg-emerald-50">

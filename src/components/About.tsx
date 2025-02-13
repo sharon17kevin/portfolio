@@ -1,11 +1,47 @@
-import { Code, User } from "lucide-react";
 import { motion, useScroll, useSpring } from "motion/react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import ArrowLeft from "../icons/ArrowLeft";
+
+const slides = [
+  {
+    title: "Precision Agriculture",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    image:
+      "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "App Development",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    image:
+      "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "Machine Learning",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    image:
+      "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&w=800&q=80",
+  },
+];
 
 const About = () => {
   const containerRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const { scrollYProgress } = useScroll({ target: containerRef });
+
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on("change", (value) => {
+      const totalSlides = slides.length;
+      const step = 1 / totalSlides; // Define scroll threshold per slide
+
+      // Determine which slide should be active
+      let newSlide = Math.floor(value / step);
+      if (newSlide >= totalSlides) newSlide = totalSlides - 1;
+      if (newSlide !== currentSlide) setCurrentSlide(newSlide);
+    });
+
+    return () => unsubscribe();
+  }, [scrollYProgress, currentSlide]);
+
   const scaleY = useSpring(scrollYProgress);
 
   return (
@@ -31,40 +67,18 @@ const About = () => {
               <ArrowLeft />
             </motion.div>
           </div>
-          <div className="md:w-2/3 py-20">
+          <div className=" overflow-hidden w-2/3 h-96">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.7 }}
             >
-              <p className="text-gray-600 mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-              <p className="text-gray-600 mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 bg-white rounded-lg border-black border text-black">
-                  <User className=" mb-2" />
-                  <h3 className="font-semibold">Background</h3>
-                  <p className="text-sm text-gray-600">
-                    Computer Science Graduate
-                  </p>
-                </div>
-                <div className="p-4 bg-white rounded-lg border-black border text-black">
-                  <Code className=" mb-2" />
-                  <h3 className="font-semibold ">Tech Stack</h3>
-                  <p className="text-sm text-gray-600">
-                    React, Node.js, TypeScript, Python,...
-                  </p>
-                </div>
+              <div
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                className="flex transition-transform duration-500 ease-out"
+              >
+                {slides.map((card, index) => Card({ ...card, index }))}
               </div>
             </motion.div>
           </div>
@@ -74,33 +88,30 @@ const About = () => {
   );
 };
 
-const Hellen = () => {
+interface Props {
+  title: string;
+  text: string;
+  image: string;
+  index: number;
+}
+
+const Card = ({ title, text, image, index }: Props) => {
   return (
-    <div className="md:w-1/2 py-20">
-      <p className="text-gray-600 mb-6">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </p>
-      <p className="text-gray-600 mb-6">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </p>
-      <div className="grid grid-cols-2 gap-4">
-        <div className="p-4 bg-white rounded-lg border-black border text-black">
-          <User className=" mb-2" />
-          <h3 className="font-semibold">Background</h3>
-          <p className="text-sm text-gray-600">Computer Science Graduate</p>
+    <div
+      key={index}
+      className="bg-white rounded-lg border border-black w-full h-96 flex-shrink-0 flex items-center justify-center p-4"
+    >
+      <div className="flex flex-col md:flex-row w-full h-full">
+        <div className="flex flex-1 flex-col justify-center">
+          <h1 className="font-darkerGrotesque font-bold text-2xl text-center">{title}</h1>
+          <p className="font-darkerGrotesque text-xl">{text}</p>
         </div>
-        <div className="p-4 bg-white rounded-lg border-black border text-black">
-          <Code className=" mb-2" />
-          <h3 className="font-semibold ">Tech Stack</h3>
-          <p className="text-sm text-gray-600">
-            React, Node.js, TypeScript, Python,...
-          </p>
+        <div className="flex flex-1">
+          <img
+            src={image}
+            alt="Profile"
+            className="rounded-md object-contain"
+          />
         </div>
       </div>
     </div>
