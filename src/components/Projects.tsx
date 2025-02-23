@@ -1,7 +1,5 @@
-import { motion, useScroll, useSpring } from "motion/react";
+import { motion, useScroll } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import ArrowLeft from "../icons/ArrowLeft";
-import { link } from "motion/react-client";
 
 const projects = [
   {
@@ -58,7 +56,6 @@ const projects = [
 const Projects = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: containerRef });
-  const scaleY = useSpring(scrollYProgress);
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -77,36 +74,28 @@ const Projects = () => {
   }, [scrollYProgress, currentSlide]);
 
   return (
-    <section ref={containerRef} className="relative h-[300vh] bg-white">
-      <div className="sticky top-0 flex h-screen w-full items-center overflow-hidden">
-        <div className="flex flex-col w-11/12 mx-auto md:flex-row items-center justify-start gap-12">
-          <div className="h-screen flex items-center justify-start bg-customGreen-light w-1/3">
-            <div className="bg-white h-screen flex flex-col justify-center items-center space-y-1">
-              <motion.div
-                style={{ scaleY, transformOrigin: "top" }}
-                className="w-[4px] flex-grow bg-customGreen"
-              ></motion.div>
-              <div className="bg-customGreen rounded-full w-4 h-4"></div>
-            </div>
+    <section ref={containerRef} className=" bg-white">
+      <div className="flex w-full items-center overflow-hidden">
+        <div className="flex w-10/12 mx-auto flex-col items-center justify-start py-16 gap-4 space-y-0">
+          <div className="flex w-full items-center justify-start">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.2 }}
-              className="bg-white flex flex-grow h-32 items-center justify-end pr-14 space-x-2"
+              className=" flex flex-grow h-20 md:h-32 items-center justify-center"
             >
-              <p className="font-ebgaramond font-thin text-xl">PROJECTS</p>
-              <ArrowLeft />
+              <p className=" font-ebgaramond font-thin text-lg sm:text-2xl md:text-4xl">PROJECTS</p>
             </motion.div>
           </div>
-          <div className="md:w-2/3 py-20">
+          <div className="w-full">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.7 }}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {projects.map((card, index) => (
                   <Card
                     key={index}
@@ -142,11 +131,11 @@ const Card = ({ name, subtitle, link, image }: Props) => {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-customGreen opacity-40 transition-all duration-300 group-hover:opacity-60"></div>
+      <div className="absolute inset-0 bg-customGreen-dark opacity-30 transition-all duration-300 group-hover:opacity-50"></div>
 
       {/* Text Content */}
       <div className="z-10 flex flex-col justify-center h-full text-white text-xl border-0 border-white group-hover:border-2 ">
-        <div className="text-center text-2xl font-bold -translate-y-2 transition-all duration-500 transform group-hover:translate-y-0">
+        <div className="text-center text-2xl font-darkerGrotesque font-bold -translate-y-2 transition-all duration-500 transform group-hover:translate-y-0">
           {name}
         </div>
         <div className="text-center text-lg opacity-0 transition-all translate-y-4 duration-500 group-hover:opacity-100 group-hover:translate-y-0">
