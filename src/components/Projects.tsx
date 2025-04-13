@@ -17,7 +17,7 @@ const projects = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYhFPaEvzlN2XarX3WPG5X_rrkEjGYAuJpHQ&s",
   },
   {
-    name: "Full AWS AI walkthrough",
+    name: "Caption Generator for Image Input",
     subtitle: "An app for my undergrad fantasy football league",
     link: "Github",
     image:
