@@ -19,7 +19,7 @@ const Footer = () => {
           </a>
         </div>
         <p className="text-emerald-200 text-sm md:text-lg">
-          © 2024 John Doe. All rights reserved.
+          © 2025 Anyanwu Sharon-Kevin Chukwuemeka. All rights reserved.
         </p>
       </div>
     </footer>

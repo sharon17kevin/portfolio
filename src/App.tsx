@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -5,6 +6,11 @@ import HeroSection from './components/HeroSection';
 import Projects from './components/Projects';
 
 function App() {
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div className="min-h-screen bg-emerald-50 text-customGreen-dark">
       {/* Hero Section */}
