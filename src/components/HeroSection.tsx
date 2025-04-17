@@ -34,13 +34,13 @@ const HeroSection = () => {
 
   useEffect(() => {
     if (!scrollInput) return;
-  
+
     const unsubscribe = scrollYProgress.on("change", (value) => {
       const newValue = Math.floor(value * 120);
       scrollInput.value = Math.max(-2, Math.min(120, newValue));
-      console.log(scrollInput.value)
+      console.log(scrollInput.value);
     });
-  
+
     return () => unsubscribe();
   }, [scrollYProgress, scrollInput]);
 
@@ -93,16 +93,38 @@ const HeroSection = () => {
               <div className=" w-full h-2/6 flex justify-center items-end pb-3 md:pb-0 md:items-center">
                 <div className="h-auto m-2 md:h-24 w-full lg:w-8/12 px-2 py-2 bg-primary rounded-lg flex justify-around items-center">
                   <div className="border-r border-black flex justify-center flex-1">
-                    <FaTwitter size={40} className="text-customGreen-dark cursor-pointer"/>
+                    <a href="https://x.com/Sharonkvn">
+                      {<FaTwitter
+                        size={40}
+                        className="text-customGreen-dark cursor-pointer"
+                      />}
+                    </a>
                   </div>
                   <div className="border-r border-black flex justify-center flex-1">
-                    <FaGithub size={40} className="text-customGreen-dark cursor-pointer"/>
+                    <a href="https://github.com/sharon17kevin">
+                      {<FaGithub
+                        size={40}
+                        className="text-customGreen-dark cursor-pointer"
+                      />}
+                    </a>
                   </div>
                   <div className="border-r border-black flex justify-center flex-1">
-                    <SiMedium size={40} className="text-customGreen-dark cursor-pointer"/>
+                    <a href="https://medium.com/@sharon14kevin">
+                      {
+                        <SiMedium
+                          size={40}
+                          className="text-customGreen-dark cursor-pointer"
+                        />
+                      }
+                    </a>
                   </div>
                   <div className="flex justify-center flex-1">
-                    <FaLinkedin size={40} className="text-customGreen-dark cursor-pointer"/>
+                    <a href="https://www.linkedin.com/in/sharon-kevin-anyanwu-8b8b0929a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BV%2Bruf9xtSambvGrDy4DZdw%3D%3D">
+                      {<FaLinkedin
+                        size={40}
+                        className="text-customGreen-dark cursor-pointer"
+                      />}
+                    </a>
                   </div>
                 </div>
               </div>

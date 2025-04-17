@@ -6,31 +6,31 @@ const slides = [
   {
     title: "My Background",
     title2: "RoadMap an Efficient Farm",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    text: "Versatile Computer Science graduate with experience in software development and educational support, combining technical skills with a passion for innovation in Precision Agriculture, Data Science, and AI. Proficient in Machine Learning, Deep Learning, Computer Vision, and AWS Cloud Services. Committed to continuous improvement and collaboration, with a goal to contribute to impactful, tech-driven solutions.",
+    image:
+      "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "Artificial Intelligence",
+    title2: "Megan Has Done Time",
+    text: "My fascination with Artificial Intelligence stems from its transformative potential across industries. I’m particularly drawn to how AI can drive smarter decision-making, automate complex tasks, and solve problems. Through hands-on projects involving machine learning, deep learning, and computer vision, I’ve honed my skills and remain committed to exploring innovative AI applications that create meaningful impact.",
     image:
       "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "Precision Agriculture",
     title2: "RoadMap an Efficient Farm",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    text: "Inspired by my early experiences farming alongside my grandmother, I developed a deep-rooted interest in agriculture and a passion for leveraging technology—particularly AI and data science—to improve crop productivity, sustainability, and decision-making. My past projects demonstrate a strong commitment to advancing agricultural practices through intelligent, data-driven innovations.",
     image:
       "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "App Development",
     title2: "Capture the Attention of Viewers",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    text: "I’m a versatile software developer skilled across front-end, back-end, and machine learning stacks. From building React apps to deploying Python-based models and cloud solutions, I enjoy creating efficient, user-focused tools that solve real-world problems.",
     image:
       "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "Machine Learning",
-    title2: "Megan Has Done Time",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image:
-      "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&w=800&q=80",
-  },
+  }
 ];
 
 const About = () => {
@@ -61,8 +61,8 @@ const About = () => {
   return (
     <section ref={containerRef} className="relative h-[400vh] bg-primary">
       <div className="sticky top-0 flex h-screen w-full items-center overflow-hidden">
-        <div className="flex md:w-10/12 w-full h-screen mx-auto flex-row items-center justify-start gap-12">
-          <div className=" h-full w-14 flex-col-reverse flex md:flex-row items-center justify-center md:justify-start md:w-1/3">
+        <div className="flex md:w-11/12 w-full h-screen mx-auto flex-row items-center justify-start gap-12">
+          <div className=" h-full w-14 flex-col-reverse flex md:flex-row items-center justify-center md:justify-start md:w-1/4">
             {/* Indicator Numbers */}
             <div className=" flex h-52">
               <div className="h-full flex flex-col justify-around font-ebgaramond font-thin">
@@ -95,7 +95,7 @@ const About = () => {
               </div>
             </motion.div>
           </div>
-          <div className=" overflow-hidden w-2/3 h-screen">
+          <div className=" overflow-hidden w-3/4 h-screen">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
