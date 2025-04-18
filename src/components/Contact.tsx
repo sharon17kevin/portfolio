@@ -11,7 +11,7 @@ const Contact = () => {
             Feel free to reach out if you'd like to connect!
           </p>
           <a
-            href="mailto:contact@example.com"
+            href="mailto:sharon14kevin@gmail.com"
             className="inline-flex items-center bg-secondary text-white px-8 py-3 rounded-lg hover:bg-emerald-700 transition-colors"
           >
             <Mail size={20} className="mr-2" />
