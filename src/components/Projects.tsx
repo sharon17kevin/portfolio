@@ -2,6 +2,8 @@ import { motion, useScroll } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import wildsport from "../assets/wildsport.webp";
 import a3c from "../assets/A3C.webp";
+import rawg from "../assets/rawg.webp"
+import final from "../assets/final.webp"
 import StaggeredMotion from "./StaggeredMotion";
 
 const projects = [
@@ -28,16 +30,15 @@ const projects = [
     link: "Github",
     address: "https://github.com/sharon17kevin/captionGenerator",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYhFPaEvzlN2XarX3WPG5X_rrkEjGYAuJpHQ&s",
+      "https://images.unsplash.com/photo-1641840296052-1b41c4bce493?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Crop Rotation Decision Support System",
     subtitle:
       "A crop rotation decision support app that uses Random Forest to predict yeild based on parameters",
     link: "Github",
-    address: "https://github.com/sharon17kevin/WildSport",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYhFPaEvzlN2XarX3WPG5X_rrkEjGYAuJpHQ&s",
+    address: "https://github.com/sharon17kevin/FinalYearProject",
+    image: final,
   },
   {
     name: "A3C Agent for Atari Gymnasium",
@@ -51,18 +52,9 @@ const projects = [
     name: "RAWG Clone",
     subtitle: "A clone of the RAWG website",
     link: "Github",
-    address: "https://github.com/sharon17kevin/pmg-prints",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYhFPaEvzlN2XarX3WPG5X_rrkEjGYAuJpHQ&s",
+    address: "https://github.com/sharon17kevin/sharonz-game-hub",
+    image: rawg,
   },
-  // {
-  //   name: "Neural Network",
-  //   subtitle: "An app for my undergrad fantasy football league",
-  //   link: "Github",
-  //   address: "https://github.com/sharon17kevin/WildSport",
-  //   image:
-  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYhFPaEvzlN2XarX3WPG5X_rrkEjGYAuJpHQ&s",
-  // },
 ];
 
 const Projects = () => {
@@ -102,7 +94,7 @@ const Projects = () => {
               </p>
             </motion.div>
           </div>
-          <div className="w-full bg-emerald-200">
+          <div className="w-full">
             <StaggeredMotion
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
               childClassName=""
@@ -145,7 +137,7 @@ const Card = ({ name, subtitle, link, address, image }: Props) => {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-customGreen-dark opacity-30 transition-all duration-300 group-hover:opacity-50"></div>
+      <div className="absolute inset-0 bg-customGreen-dark opacity-50 transition-all duration-300 group-hover:opacity-65"></div>
 
       {/* Text Content */}
       <div className="z-10 flex flex-col justify-center h-full text-white text-xl border-0 border-white group-hover:border-2 ">
