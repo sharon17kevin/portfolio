@@ -47,7 +47,7 @@ const HeroSection = () => {
   return (
     <section
       ref={containerRef}
-      className="relative h-[1000px] bg-primary md:h-[300vh]"
+      className="relative h-[100vh] bg-primary md:h-[300vh]"
     >
       <div
         style={{
@@ -59,7 +59,7 @@ const HeroSection = () => {
         className="sticky top-0 w-full min-h-screen flex flex-col text-black bg-white"
       >
         <div className="absolute inset-0 bg-white/90 flex flex-col w-full h-full">
-          <div className=" flex-col md:flex-row flex w-[1400px] max-w-full h-screen  mx-auto items-center justify-center">
+          <div className=" flex-col md:flex-row flex w-[1400px] max-w-full h-full  mx-auto items-center justify-center">
             <div className="  w-full lg:w-1/2 md:w-3/5 flex flex-col h-full justify-start overflow-visible">
               <div className="flex flex-1 font-cormorantUpright font-semibold text-2xl sm:text-6xl md:text-[80px] overflow-visible items-center justify-center md:justify-start">
                 <p className="text-customGreen-dark ml-10 text-center md:text-left ">
