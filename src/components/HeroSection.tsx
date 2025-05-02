@@ -47,7 +47,7 @@ const HeroSection = () => {
   return (
     <section
       ref={containerRef}
-      className="relative h-[100vh] bg-primary md:h-[300vh]"
+      className="relative h-[1000px] bg-primary md:h-[300vh]"
     >
       <div
         style={{
@@ -56,7 +56,7 @@ const HeroSection = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="sticky top-0 w-full min-h-screen flex flex-col text-black bg-white"
+        className="sticky top-0 w-full min-h-full md:min-h-screen flex flex-col text-black bg-white"
       >
         <div className="absolute inset-0 bg-white/90 flex flex-col w-full h-full">
           <div className=" flex-col md:flex-row flex w-[1400px] max-w-full h-full  mx-auto items-center justify-center">
