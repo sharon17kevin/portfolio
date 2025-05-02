@@ -47,7 +47,7 @@ const HeroSection = () => {
   return (
     <section
       ref={containerRef}
-      className="relative h-[1000px] bg-primary md:h-[300vh]"
+      className="relative h-screen bg-primary md:h-[300vh]"
     >
       <div
         style={{
