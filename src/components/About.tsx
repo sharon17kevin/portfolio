@@ -6,31 +6,31 @@ const slides = [
   {
     title: "My Background",
     title2: "RoadMap an Efficient Farm",
-    text: "Versatile Computer Science graduate with experience in software development and educational support, combining technical skills with a passion for innovation in Precision Agriculture, Data Science, and AI. Proficient in Machine Learning, Deep Learning, Computer Vision, and AWS Cloud Services. Committed to continuous improvement and collaboration, with a goal to contribute to impactful, tech-driven solutions.",
+    text: "Computer Science graduate blending software development with AI and cloud expertise. Passionate about applying tech to real-world problems, especially in agriculture and education.",
     image:
-      "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1572816225927-d08fb138f2b2?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "Artificial Intelligence",
     title2: "Megan Has Done Time",
-    text: "My fascination with Artificial Intelligence stems from its transformative potential across industries. I’m particularly drawn to how AI can drive smarter decision-making, automate complex tasks, and solve problems. Through hands-on projects involving machine learning, deep learning, and computer vision, I’ve honed my skills and remain committed to exploring innovative AI applications that create meaningful impact.",
+    text: "Driven by AI’s power to automate and solve complex problems. Experienced in machine learning, deep learning, and computer vision through practical, impactful projects.",
     image:
-      "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "Precision Agriculture",
     title2: "RoadMap an Efficient Farm",
-    text: "Inspired by my early experiences farming alongside my grandmother, I developed a deep-rooted interest in agriculture and a passion for leveraging technology—particularly AI and data science—to improve crop productivity, sustainability, and decision-making. My past projects demonstrate a strong commitment to advancing agricultural practices through intelligent, data-driven innovations.",
+    text: "Fusing early farming roots with AI to boost productivity and sustainability. Focused on building data-driven tools for smarter agricultural decisions.",
     image:
-      "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1524486361537-8ad15938e1a3?auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "App Development",
-    title2: "Capture the Attention of Viewers",
-    text: "I’m a versatile software developer skilled across front-end, back-end, and machine learning stacks. From building React apps to deploying Python-based models and cloud solutions, I enjoy creating efficient, user-focused tools that solve real-world problems.",
+    title: "Cloud Computing",
+    title2: "Scale Seamlessly with the Cloud",
+    text: "I specialize in deploying scalable cloud-native applications using AWS and serverless technologies. Whether it's building APIs with AWS Lambda or managing infrastructure with Terraform, I ensure performance, reliability, and efficiency in every solution.",
     image:
-      "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&w=800&q=80",
-  }
+      "https://images.unsplash.com/photo-1667984390533-64bdefe719ea?auto=format&fit=crop&w=800&q=80",
+  }  
 ];
 
 const About = () => {
@@ -59,17 +59,49 @@ const About = () => {
   });
 
   return (
-    <section ref={containerRef} className="relative h-[400vh] bg-primary">
-      <div className="sticky top-0 flex h-screen w-full items-center overflow-hidden">
+    <section ref={containerRef} className="relative md:h-[400vh] h-[200vh] bg-primary">
+      <div className="sticky top-0 flex h-screen w-full items-center overflow-hidden will-change-transform">
         <div className="flex md:w-11/12 w-full h-screen mx-auto flex-row items-center justify-start gap-12">
           <div className=" h-full w-14 flex-col-reverse flex md:flex-row items-center justify-center md:justify-start md:w-1/4">
             {/* Indicator Numbers */}
             <div className=" flex h-52">
               <div className="h-full flex flex-col justify-around font-ebgaramond font-thin">
-                <p className={`${currentSlide == 0? "md:text-2xl sm:text-xl text-base text-customBlue-dark": "text-xs sm:text-sm md:text-base text-gray-400"}`}>01</p>
-                <p className={`${currentSlide == 1? "md:text-2xl sm:text-xl text-base text-customBlue-dark": "text-xs sm:text-sm md:text-base text-gray-400"}`}>02</p>
-                <p className={`${currentSlide == 2? "md:text-2xl sm:text-xl text-base text-customBlue-dark": "text-xs sm:text-sm md:text-base text-gray-400"}`}>03</p>
-                <p className={`${currentSlide == 3? "md:text-2xl sm:text-xl text-base text-customBlue-dark": "text-xs sm:text-sm md:text-base text-gray-400"}`}>04</p>
+                <p
+                  className={`${
+                    currentSlide == 0
+                      ? "md:text-2xl sm:text-xl text-base text-customBlue-dark"
+                      : "text-xs sm:text-sm md:text-base text-gray-400"
+                  }`}
+                >
+                  01
+                </p>
+                <p
+                  className={`${
+                    currentSlide == 1
+                      ? "md:text-2xl sm:text-xl text-base text-customBlue-dark"
+                      : "text-xs sm:text-sm md:text-base text-gray-400"
+                  }`}
+                >
+                  02
+                </p>
+                <p
+                  className={`${
+                    currentSlide == 2
+                      ? "md:text-2xl sm:text-xl text-base text-customBlue-dark"
+                      : "text-xs sm:text-sm md:text-base text-gray-400"
+                  }`}
+                >
+                  03
+                </p>
+                <p
+                  className={`${
+                    currentSlide == 3
+                      ? "md:text-2xl sm:text-xl text-base text-customBlue-dark"
+                      : "text-xs sm:text-sm md:text-base text-gray-400"
+                  }`}
+                >
+                  04
+                </p>
               </div>
               <div className=" h-full flex flex-col justify-center items-center space-y-1">
                 <div className="bg-gray-300 rounded-full w-2 h-2 md:w-4 md:h-4"></div>
@@ -88,7 +120,9 @@ const About = () => {
               className="flex md:flex-grow h-10 md:h-56 items-start pl-10 space-x-2"
             >
               <div className=" flex justify-start items-center">
-                <p className="font-ebgaramond font-thin text-base sm:text-lg md:text-xl">ABOUT</p>
+                <p className="font-ebgaramond font-thin text-base sm:text-lg md:text-xl">
+                  ABOUT
+                </p>
                 <div className="hidden md:flex">
                   <ArrowLeft />
                 </div>
@@ -131,18 +165,24 @@ const Card = ({ title, text, image, index }: Props) => {
     >
       <div className="flex flex-col sm:flex-row w-full h-full">
         <div className="flex flex-1 flex-col space-y-0 md:space-y-2 justify-center md:items-start text-left pr-0 md:pr-10">
-          <h1 className="text-customGreen font-ebgaramond lg:text-4xl md:text-2xl sm:text-lg text-base">{"0" + (index + 1)}</h1>
+          <h1 className="text-customGreen font-ebgaramond lg:text-4xl md:text-2xl sm:text-lg text-base">
+            {"0" + (index + 1)}
+          </h1>
           <h1 className="font-cormorantUpright font-bold lg:text-2xl md:text-xl sm:text-lg text-base text-left text-black">
             {title.toUpperCase()}
           </h1>
-          <p className="font-darkerGrotesque text-black lg:text-lg md:text-base text-sm">{text}</p>
+          <p className="font-darkerGrotesque text-black lg:text-lg md:text-base text-sm">
+            {text}
+          </p>
         </div>
-        <div className="flex flex-1">
-          <img
-            src={image}
-            alt="Profile"
-            className="rounded-md object-contain"
-          />
+        <div className="flex flex-1 justify-center items-center">
+          <div className="aspect-[4/3] md:aspect-auto h-auto md:h-1/2 w-full">
+            <img
+              src={image}
+              alt="Profile"
+              className="rounded-md object-cover w-full h-full"
+            />
+          </div>
         </div>
       </div>
     </div>

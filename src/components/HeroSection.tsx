@@ -63,7 +63,7 @@ const HeroSection = () => {
           <div className=" flex-col md:flex-row flex w-[1400px] max-w-full h-full  mx-auto items-center justify-evenly">
             <div className="  w-full lg:w-1/2 md:w-3/5 flex flex-col h-auto md:h-full justify-start overflow-visible">
               <div className="flex flex-1 font-cormorantUpright font-semibold text-5xl md:text-[80px] overflow-visible items-center justify-center md:justify-start">
-                <p className="text-customGreen-dark ml-10 text-center md:text-left ">
+                <p className="text-customGreen-dark ml-0 md:ml-10 text-center md:text-left ">
                   HEY, I'M <br />
                   SHARON-KEVIN
                 </p>
