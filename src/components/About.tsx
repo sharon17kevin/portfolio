@@ -39,6 +39,12 @@ const About = () => {
   const { scrollYProgress } = useScroll({ target: containerRef });
 
   useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.style.height = `${window.innerHeight * 4}px`;
+    }
+  }, []);
+
+  useEffect(() => {
     const unsubscribe = scrollYProgress.on("change", (value) => {
       const totalSlides = slides.length;
       const step = 1 / totalSlides; // Define scroll threshold per slide
@@ -59,7 +65,7 @@ const About = () => {
   });
 
   return (
-    <section ref={containerRef} className="relative md:h-[400vh] h-[200vh] bg-primary">
+    <section ref={containerRef} className="relative bg-primary">
       <div className="sticky top-0 flex h-screen w-full items-center overflow-hidden will-change-transform">
         <div className="flex md:w-11/12 w-full h-screen mx-auto flex-row items-center justify-start gap-12">
           <div className=" h-full w-14 flex-col-reverse flex md:flex-row items-center justify-center md:justify-start md:w-1/4">
