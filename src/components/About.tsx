@@ -70,11 +70,7 @@ const About = () => {
   });
 
   return (
-    <section
-      id="about"
-      ref={containerRef}
-      className="relative bg-forest-800"
-    >
+    <section id="about" ref={containerRef} className="relative bg-forest-800">
       <div className="sticky top-0 flex h-screen w-full items-center overflow-hidden">
         <div className="flex w-full h-full">
           {/* Left sidebar — Navigation & Label */}
@@ -119,7 +115,9 @@ const About = () => {
 
           {/* Mobile top bar */}
           <div className="md:hidden absolute top-4 left-0 right-0 flex items-center justify-between px-6 z-10">
-            <p className="font-outfit text-[10px] tracking-[0.3em] uppercase text-white/30">About Me</p>
+            <p className="font-outfit text-[10px] tracking-[0.3em] uppercase text-white/30">
+              About Me
+            </p>
             <div className="flex gap-2">
               {slides.map((_, i) => (
                 <button
@@ -127,7 +125,9 @@ const About = () => {
                   onClick={() => setCurrentSlide(i)}
                   aria-label={`Go to slide ${i + 1}`}
                   className={`transition-all duration-500 rounded-full ${
-                    currentSlide === i ? "w-4 h-1.5 bg-forest-400" : "w-1.5 h-1.5 bg-white/20"
+                    currentSlide === i
+                      ? "w-4 h-1.5 bg-forest-400"
+                      : "w-1.5 h-1.5 bg-white/20"
                   }`}
                 />
               ))}
