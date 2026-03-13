@@ -3,31 +3,23 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import HeroSection from './components/HeroSection';
+import NavBar from './components/NavBar';
 import Projects from './components/Projects';
 
 function App() {
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   return (
-    <div className="min-h-screen bg-emerald-50 text-customGreen-dark">
-      {/* Hero Section */}
-      <HeroSection/>
-
-      {/* About Section */}
-      <About/>
-
-      {/* Projects Section */}
-      <Projects/>
-
-      {/* Contact Section */}
-      <Contact/>
-
-      {/* Footer */}
-      <Footer/>
-      
+    <div className="min-h-screen bg-ivory text-forest-800 grain-overlay">
+      <NavBar />
+      <HeroSection />
+      <About />
+      <Projects />
+      <Contact />
+      <Footer />
     </div>
   );
 }

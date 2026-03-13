@@ -1,28 +1,45 @@
 import { FaTwitter } from "react-icons/fa";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
-import { FiMail } from "react-icons/fi";
+import { SiMedium } from "react-icons/si";
 
 const Footer = () => {
+  const links = [
+    { icon: <FaGithub size={16} />, href: "https://github.com/sharon17kevin", label: "GitHub" },
+    { icon: <FaLinkedin size={16} />, href: "https://www.linkedin.com/in/sharon-kevin-anyanwu-8b8b0929a/", label: "LinkedIn" },
+    { icon: <FaTwitter size={16} />, href: "https://x.com/Sharonkvn", label: "Twitter" },
+    { icon: <SiMedium size={16} />, href: "https://medium.com/@sharon14kevin", label: "Medium" },
+  ];
+
   return (
-    <footer className="bg-emerald-800 text-white py-8">
-      <div className="container mx-auto px-4 text-center">
-        <div className="flex justify-center gap-4 mb-4">
-          <a href="https://github.com/sharon17kevin" className="hover:text-emerald-300 transition-colors">
-            {<FaGithub size={20} />}
-          </a>
-          <a href="https://www.linkedin.com/in/sharon-kevin-anyanwu-8b8b0929a/" className="hover:text-emerald-300 transition-colors">
-            {<FaLinkedin size={20} />}
-          </a>
-          <a href="https://x.com/Sharonkvn" className="hover:text-emerald-300 transition-colors">
-            {<FaTwitter size={20}/>}
-          </a>
-          <a href="#" className="hover:text-emerald-300 transition-colors">
-            {<FiMail size={20}/>}
-          </a>
+    <footer className="bg-forest-950 text-white/40 py-10 md:py-14">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          {/* Logo */}
+          <p className="font-playfair text-lg text-white/60">
+            S<span className="text-forest-400">.</span>K
+          </p>
+
+          {/* Social links */}
+          <div className="flex items-center gap-6">
+            {links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/30 hover:text-forest-400 transition-colors duration-300"
+                aria-label={link.label}
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
+
+          {/* Copyright */}
+          <p className="font-outfit text-xs tracking-wider text-white/25">
+            &copy; 2025 Sharon-Kevin Anyanwu
+          </p>
         </div>
-        <p className="text-emerald-200 text-sm md:text-lg">
-          © 2025 Anyanwu Sharon-Kevin Chukwuemeka. All rights reserved.
-        </p>
       </div>
     </footer>
   );
